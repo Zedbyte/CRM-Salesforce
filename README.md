@@ -139,3 +139,12 @@ Travel agencies globally face operational complexity due to scattered processes,
 - Salesforce Official Documentation
 - Travel Industry Reports and Use Cases via Google
 - ChatGPT
+
+
+# Phase 2: Requirement Analysis & Planning
+
+## 1. Salesforce Account
+[!https://drive.google.com/file/d/1L_wUXLt7vhW3J4OI-KXTJKMU2z6oLGRw/view?usp=sharing]
+
+## 2. Objects Creation
+[!https://drive.google.com/file/d/1lazdVg8_UjE4ydnFRQ_enWFsqYqmTcaF/view?usp=sharing]
