@@ -176,6 +176,4 @@ Travel agencies globally face operational complexity due to scattered processes,
 [!https://drive.google.com/file/d/13yZbLr09OJtpVFduVNbd5mgX3OuyDFgN/view?usp=sharing]
 
 ## 4. Fields & Relationships
-
-#### Activity 1
 [!https://drive.google.com/drive/folders/1CIbPOVx0Fnfs9mmvUtf5AJjJmRqutnqS?usp=sharing]
