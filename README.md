@@ -1,3 +1,17 @@
+# Project Overview
+
+The Tours & Travels CRM project is aimed at developing a Salesforce-based Customer Relationship Management system tailored for global travel agencies. It addresses operational challenges such as manual bookings, fragmented communication, and lack of visibility across customer interactions, finance, and employee coordination.
+
+By leveraging Salesforce's automation, data modeling, UI customization, and reporting capabilities, the CRM will enable travel companies to manage bookings, communicate with customers in real time, assign agents and guides, automate follow-ups, and gain insights through dashboards — all within a centralized and secure system.
+
+# Objectives
+The core objective of this project is to design and implement a CRM system that streamlines travel agency operations from inquiry to feedback, reduces manual workload, and enhances customer satisfaction.
+By aligning Salesforce tools with real-world business challenges, the system will:
+- Improve customer relationship management through structured onboarding, booking, and feedback workflows.
+- Enable streamlined operations by automating repetitive tasks and enabling collaboration between teams.
+- Provide business intelligence through reporting on KPIs such as monthly revenue, retention rates, and service quality.
+- Ensure data security and role-based access for users such as agents, guides, finance, and administrators.
+
 
 # Phase 1: Requirement Analysis & Planning
 
@@ -72,11 +86,10 @@ Travel agencies globally face operational complexity due to scattered processes,
 - Implement custom objects, automation, UI, and analytics features.
 - Ensure role-based access for different user groups.
 
-### Key Objectives
-- Reduce manual work through automation of key business workflows.
-- Improve customer engagement via personalized, timely communication.
-- Increase operational visibility with reporting dashboards and analytics.
-- Enable collaboration between travel agents, guides, and finance departments.
+### Functional Objectives (Phase 1)
+- Identify and translate business processes into Salesforce CRM logic
+- Establish a clear understanding of user expectations and business constraints
+- Create a foundation for future implementation (data models, workflows, security)
 
 ## 3. Gathering & Analyzing User Needs
 
@@ -114,7 +127,7 @@ Travel agencies globally face operational complexity due to scattered processes,
 | **Analytics**       | Custom Reports and Dashboards                                                                                         |
 | **Email Services**  | Email Alerts and Templates for confirmations and reminders                                                            |
 
-## 5. Data & Security Model (Planned)
+## 5. Data & Security Model
 
 ### Data Model Structure
 - Booking is linked to:
@@ -133,6 +146,16 @@ Travel agencies globally face operational complexity due to scattered processes,
 - Permission Sets: Granular access to reports and object records
 - Field-Level Security: Sensitive fields (like billing) restricted to Finance only
 - Record-Level Security: Sharing rules allow guides to view only relevant customer records
+
+## 🗺️ 6. Project Roadmap & Milestones
+
+| Phase                            | Deliverables                                        | Timeline |
+|----------------------------------|-----------------------------------------------------|----------|
+| Phase 1: Requirement Analysis  | Stakeholder map, user needs, business requirements  | Week 1   |
+| Phase 2: System Design         | Data model diagrams, security plan, architecture    | Week 2   |
+| Phase 3: Implementation        | Apex code, automation, LWC, object setup            | Week 3–4 |
+| Phase 4: Testing               | Functional testing, unit test classes, bug fixing   | Week 5   |
+| Phase 5: Deployment & Handover | Reports, dashboards, user training, documentation   | Week 6   |
 
 ## References
 - Salesforce Data Modeling Guide
