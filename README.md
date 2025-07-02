@@ -1,6 +1,8 @@
 
 # Phase 1: Requirement Analysis & Planning
 
+
+### Objective
 This phase focuses on understanding the business domain of the Tours & Travels industry, identifying pain points in existing operations, and clearly defining the functional and non-functional requirements for a CRM system. The goal is to ensure the CRM solution is user-centric, scalable, and aligned with real-world business needs.
 
 
@@ -8,7 +10,7 @@ This phase focuses on understanding the business domain of the Tours & Travels i
 
 ### Industry Context
 
-Travel agencies face increasing pressure to modernize customer experiences, streamline operations, and support cross-functional collaboration. Legacy systems and manual processes slow down booking workflows and hinder customer satisfaction. A Salesforce-based CRM system provides a unified platform to address these operational and strategic gaps.
+Travel agencies globally face operational complexity due to scattered processes, manual bookings, poor visibility across teams, and lack of automation. These inefficiencies impact customer satisfaction and scalability. A centralized CRM built on Salesforce can help overcome these limitations and digitize core operations.
 
 ### Stakeholders Analyzed
 
@@ -21,6 +23,19 @@ Travel agencies face increasing pressure to modernize customer experiences, stre
 - System Admins: Configure the Salesforce environment, manage roles and access.
 
 - Customers (End Users): Book trips, make payments, track booking status, and provide feedback.
+
+### Pain Points in Existing Systems
+> Derived from industry analysis, end-user behavior patterns, and stakeholder process studies.
+
+
+| Challenge                    | Description                                                                                  |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| **Manual Booking Processes** | Booking via phone, email, or spreadsheets leads to delays, errors, and duplication           |
+| **Delayed Communication**    | Customers are not informed in real-time about bookings, payment updates, or changes          |
+| **Lack of Feedback Loop**    | Feedback is not consistently captured or tracked, leading to lost insights                   |
+| **Disjointed Collaboration** | Travel agents, guides, and finance teams operate in silos without a common platform          |
+| **No Real-Time Reporting**   | Agencies struggle to monitor performance metrics like customer retention and monthly revenue |
+
 
 
 ### Approach to Requirement Gathering
@@ -123,4 +138,4 @@ Travel agencies face increasing pressure to modernize customer experiences, stre
 - Salesforce Data Modeling Guide
 - Salesforce Official Documentation
 - Travel Industry Reports and Use Cases via Google
-- ChatGPT knowledge modeling for stakeholder and industry expectations
+- ChatGPT
