@@ -171,3 +171,6 @@ Travel agencies globally face operational complexity due to scattered processes,
 
 ## 2. Objects Creation
 [!https://drive.google.com/file/d/1lazdVg8_UjE4ydnFRQ_enWFsqYqmTcaF/view?usp=sharing]
+
+## 3. Tabs
+[!https://drive.google.com/file/d/13yZbLr09OJtpVFduVNbd5mgX3OuyDFgN/view?usp=sharing]
