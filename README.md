@@ -181,5 +181,5 @@ Travel agencies globally face operational complexity due to scattered processes,
 ## 5. Field Dependencies
 [!https://drive.google.com/drive/folders/1L1MnNcS6gOgorsmZ9c3OvUXqhWw0pcNZ?usp=sharing]
 
-## 6. Milestone 6
+## 6. Validation Rules
 [!https://drive.google.com/drive/folders/1qedRP5LupiJOp4huJ3hlHfFEF_D8R5pN?usp=sharing]
