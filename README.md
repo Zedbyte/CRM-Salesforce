@@ -147,7 +147,7 @@ Travel agencies globally face operational complexity due to scattered processes,
 - Field-Level Security: Sensitive fields (like billing) restricted to Finance only
 - Record-Level Security: Sharing rules allow guides to view only relevant customer records
 
-## 🗺️ 6. Project Roadmap & Milestones
+## 6. Project Roadmap & Milestones
 
 | Phase                            | Deliverables                                        | Timeline |
 |----------------------------------|-----------------------------------------------------|----------|
@@ -177,3 +177,6 @@ Travel agencies globally face operational complexity due to scattered processes,
 
 ## 4. Fields & Relationships
 [!https://drive.google.com/drive/folders/1CIbPOVx0Fnfs9mmvUtf5AJjJmRqutnqS?usp=sharing]
+
+## 5. Field Dependencies
+[!https://drive.google.com/drive/folders/1L1MnNcS6gOgorsmZ9c3OvUXqhWw0pcNZ?usp=sharing]
