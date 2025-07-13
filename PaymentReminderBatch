@@ -1,0 +1,86 @@
+global class PaymentReminderBatch implements Database.Batchable<SObject> {
+
+
+
+
+    global Database.QueryLocator start(Database.BatchableContext bc) {
+
+        Date targetDate = System.today().addDays(-1); // Bookings made yesterday
+
+
+
+
+        String query = 'SELECT Id, Name, Customer_Email__c, Booking_Date__c ' +
+
+                       'FROM Booking__c ' +
+
+                       'WHERE Booking_Status__c = \'Pending\' AND Booking_Date__c = :targetDate';
+
+
+
+
+        return Database.getQueryLocator(query);
+
+    }
+
+
+
+
+    global void execute(Database.BatchableContext bc, List<Booking__c> scope) {
+
+        List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
+
+
+
+
+        for (Booking__c booking : scope) {
+
+            if (String.isNotBlank(booking.Customer_Email__c)) {
+
+                Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+
+                mail.setToAddresses(new String[] { booking.Customer_Email__c });
+
+                mail.setSubject('Payment Reminder for Your Booking');
+
+                mail.setPlainTextBody('Hi,\n\nThis is a gentle reminder to complete your payment for booking: ' + booking.Name +
+
+                                      '.\n\nPlease make the payment to confirm your trip.\n\nThanks,\nTours & Travels CRM');
+
+                emails.add(mail);
+
+            }
+
+        }
+
+
+
+
+        if (!emails.isEmpty()) {
+
+            Messaging.sendEmail(emails);
+
+        }
+
+    }
+
+
+
+
+    global void finish(Database.BatchableContext bc) {
+
+        // Optional: notify admin
+
+        Messaging.SingleEmailMessage adminMail = new Messaging.SingleEmailMessage();
+
+        adminMail.setToAddresses(new String[] { 'annapurna@thesmartbridge.com' });
+
+        adminMail.setSubject('Daily Payment Reminder Batch Completed');
+
+        adminMail.setPlainTextBody('Payment reminders for pending bookings have been processed.');
+
+        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { adminMail });
+
+    }
+
+}
