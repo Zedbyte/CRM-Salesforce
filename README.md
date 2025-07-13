@@ -44,15 +44,21 @@ A Salesforce Developer Edition account was created to serve as the secure and is
 
 This milestone introduced me to Salesforce's sandbox approach to development. I learned how crucial it is to isolate testing environments to prevent deployment of half-baked features or incorrect configurations into production. It also helped me get familiar with Developer Edition limitations and capabilities.
 
+![](https://drive.google.com/uc?export=view&id=1L_wUXLt7vhW3J4OI-KXTJKMU2z6oLGRw)
+
 ## Milestone 2: Custom Object Creation
 Seven custom objects were created to represent CRM entities: `Customer_Info__`c, `Booking__c`, `BookingGuest__c`, `TravelPackage__c`, `BookingPayment__c`, `Employee__c`, and `Feedback__c`. Each object included primary fields and lookups to reflect business relationships such as bookings being linked to customers and travel packages.
 
 This milestone deepened my understanding of Salesforce’s object schema. I learned how custom objects are more than just data holders—they define relationships, automation triggers, and UI behaviors across the platform.
 
+![](https://drive.google.com/uc?export=view&id=1lazdVg8_UjE4ydnFRQ_enWFsqYqmTcaF)
+
 ## Milestone 3: Tab Creation
 Each custom object was assigned a tab in the Lightning App to make them accessible through the UI. Tabs were grouped under a dedicated app for user convenience.
 
 I discovered that thoughtful UI organization significantly improves user navigation. Even technical configurations like tab visibility directly impact business usability.
+
+![](https://drive.google.com/uc?export=view&id=13yZbLr09OJtpVFduVNbd5mgX3OuyDFgN)
 
 ## Milestone 4: Custom Fields & Global Picklists
 Custom fields, formulas, picklists, and roll-up summaries were added to each object. Notable logic includes:
@@ -74,6 +80,8 @@ CASE(TEXT(Preferred_Accommodation__c),
 ```
 Creating these formulas taught me how to translate business pricing models and booking logic into executable Salesforce formulas. Every field defined here later powered reports, automation, and UI behavior.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1CIbPOVx0Fnfs9mmvUtf5AJjJmRqutnqS?usp=sharing)
+
 ## Milestone 5: Field Dependencies
 Dependencies were set between picklists to control which values were shown based on prior selections. For example:
 
@@ -84,6 +92,8 @@ Dependencies were set between picklists to control which values were shown based
 
 
 This milestone taught me how to improve UX and prevent invalid data entry by controlling data flow through intelligent dependencies.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1L1MnNcS6gOgorsmZ9c3OvUXqhWw0pcNZ?usp=sharing)
 
 ## Milestone 6: Validation Rules
 Validation rules ensured clean, logical, and mandatory data entry. Examples include:
@@ -98,9 +108,10 @@ AND(ISNEW(), NOT(ISPICKVAL(Status__c, "Pending")))
 
 This step helped me grasp how small logical conditions can enforce business integrity at scale. It emphasized proactive error prevention during data entry.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1qedRP5LupiJOp4huJ3hlHfFEF_D8R5pN?usp=sharing)
+
 ## Milestone 7: Approval Process
 An approval process was implemented for Booking Cancellations. When a user sets the status to "Cancelled" and confirms, a multi-step approval is triggered:
-
 
 If approved: `Approval_Status__c` = Approved and customer gets a confirmation email
 
@@ -109,10 +120,14 @@ If rejected: Status reverts to "Confirmed" and a rejection email is sent
 
 This milestone showed me how Salesforce can orchestrate managerial workflows with notifications and conditional field updates—all without manual tracking.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1sg-Qj0-37kRJPGZMUe85LIJBhgbg-6Ih?usp=sharing)
+
 ## Milestone 8: Flows
 A Record-Triggered Flow prevented overbooking by validating the number of `BookingGuest__c` records against the `Number_of_Travelers__c` field on `Booking__c`. If the guest count exceeded the allowed number, the flow blocked the save and displayed an error.
 
 This taught me how flows can enforce rules across related records dynamically. I realized Flows are essential for handling real-time business validations without code.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1j8LLLeAu54G2guYcN237Eu9AEXOMJrnS?usp=sharing)
 
 ## Milestone 9: Workflow Rule
 A workflow rule was created to generate follow-up tasks after a trip ends. When a booking’s status becomes "Completed", a task is auto-assigned to the agent:
@@ -123,6 +138,8 @@ Task Subject: “Follow up for feedback”
 
 This automation reinforced the importance of customer feedback and follow-through. It showed me how even simple workflows can improve service quality.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1ZzBEwU9HiOPk_WXS4vMbLlcGeThPkvH5?usp=sharing)
+
 ## Milestone 10: Process Builder
 A Process Builder was configured to update the booking status automatically:
 
@@ -131,6 +148,8 @@ Trigger: When `BookingPayment__c.Payment_Status__c = "Completed"`
 Action: Update related `Booking__c.Status__c = "Confirmed"`
 
 This milestone helped me automate handoffs between departments (e.g., Finance to Travel). I saw how cross-object updates can eliminate manual coordination.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/197owYKJS1jVXdjirk36sev-hKJ0Cb_v8?usp=sharing)
 
 Milestone 11: Apex Triggers
 Two triggers were developed in `BookingTrigger` with a helper class:
@@ -147,6 +166,8 @@ for (Integer i = 1; i <= booking.Number_of_Travelers__c; i++) {
 ```
 
 By modularizing logic via BookingTriggerHandler, I learned how to write clean, testable Apex code. I also practiced governor limit awareness and bulk-safe patterns.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1RVTMj7j7sfMm0t8_Uu7pqZrRyJC4LfMj?usp=sharing)
 
 ## Milestone 12: Asynchronous Apex
 Three types of async logic were added to improve performance and scalability:
@@ -174,6 +195,8 @@ Sends payment reminders for pending bookings created yesterday.
 
 This milestone introduced me to Salesforce's background processing model. It was a highlight in terms of architecture learning. I grasped how to optimize long-running jobs while respecting limits and ensuring timely customer communication.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1KIhToZOzvrFRWBfLJRIrz2wjvKKbqeHr?usp=sharing)
+
 ---
 
 # Phase 3: UI/UX Development & Customization
@@ -199,6 +222,8 @@ The app provided a unified workspace integrating all tabs, reports, and custom c
 
 This milestone introduced the importance of App-level visibility control, branding, and navigation in Lightning. It laid the foundation for role-based app access and UI simplification for future users.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1slr1B4FLRV5quzlKjejpfDUCczmchW5m?usp=sharing)
+
 ## Milestone 14: Editing of Page Layouts
 
 Page layouts for all major objects were restructured to group similar fields and enhance UI clarity. This included:
@@ -212,6 +237,8 @@ Page layouts for all major objects were restructured to group similar fields and
 - Removed clutter and blank spaces for better readability
 
 Thoughtful layout design boosts efficiency and usability. I realized that non-technical users rely on clean forms to enter accurate data, so structuring layouts logically is essential.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1OWzEXjOHpJhNWi7hc_ekcRUgVgYjKME8?usp=sharing)
 
 ## Milestone 15: Dynamic Forms
 
@@ -228,6 +255,8 @@ The record page became responsive, showing only relevant fields based on context
 
 Dynamic Forms are powerful for decluttering the UI. They help tailor forms based on business logic, making them less confusing for end users.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1OWzEXjOHpJhNWi7hc_ekcRUgVgYjKME8?usp=sharing)
+
 ## Milestone 16: Users
 
 Created user records to simulate real-world usage and enforce role-based security. Steps included:
@@ -237,6 +266,8 @@ Created user records to simulate real-world usage and enforce role-based securit
 - Created several other users with `Travel Agent Role`
 
 User creation is central to simulating role-based operations. It also plays a key part in permissions, testing, and workflows across the CRM.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1kQrKMweluoYaboxCzT1lkALpQMpYa57y?usp=sharing)
 
 ## Milestone 17: Reports
 
@@ -252,6 +283,8 @@ Created actionable reports to support financial and operational insights.
 5 more reports covering feedback analysis, customer segmentation, and agent performance.
 
 Salesforce Reports offer powerful real-time analytics. I learned to apply groupings, filters, and bucketing to meet business KPIs and share insights with specific roles.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1UzIbJGnt4tEwureT6KhNa9VVNatteLtJ?usp=sharing)
 
 ## Milestone 18: Dashboards
 
@@ -269,6 +302,7 @@ A main dashboard titled **Tours & Travels Dashboard** was created and integrated
 
 Dashboards bring insights to life. By selecting the right visualization (pie, bar, table), I improved how users interpret and act on data.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1GGqmO4xnV4zNRVbP0-Ljkag84egdbhUV?usp=sharing)
 
 ## Milestone 19: Lightning Web Component (LWC) Creation
 
@@ -304,6 +338,8 @@ handleCountryChange(event) {
 
 This milestone was my entry into LWC development. I gained experience in frontend-backend integration, data binding, and dynamic display of records.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1YXYzf044kNQIKsASckqMZTIcVpThOfhN?usp=sharing)
+
 ---
 
 ## Milestone 20: Lightning App Page Creation
@@ -318,6 +354,8 @@ The `travelPackageSelector` LWC was embedded into a dedicated App Page:
 From the App Launcher, both the CRM and LWC App Page are accessible. Users can now interactively explore packages by country.
 
 App Pages offer flexibility in UX design. Embedding reusable LWCs allows users to get real-time results without navigating across records or tabs.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1LaBwYD5eiy8kTtH9UREjvOuiCnOv6JQ2?usp=sharing)
 
 ---
 
@@ -357,6 +395,8 @@ This ensures all stakeholders and administrators can track what changes were mad
 
 Tracking field history plays an essential role in operational transparency. It gives business teams and auditors the tools needed to review changes over time and troubleshoot discrepancies effectively.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1R8-VkDwoCUdwne6ZxctuvX8-Ww_zZo4g?usp=sharing)
+
 ---
 
 ## Milestone 22: Duplicate & Matching Rules
@@ -376,6 +416,8 @@ This rule combination prevents redundancy in the customer database while still a
  
 Duplicate management is critical in CRM environments. Using matching logic on high-uniqueness fields like phone and email ensures clean data while supporting user workflows.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1A3sGe_rlsbI1KyIFLd57sc0dEghnhti9?usp=sharing)
+
 ---
 
 ## Milestone 23: Profile Management
@@ -393,6 +435,8 @@ These customizations ensured users only accessed what was necessary based on the
 
 Profiles provide the foundation for access control in Salesforce. This exercise helped me understand the principle of least privilege—grant only the permissions needed, nothing more.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1w8r6DDTBQbVI_UwvrbFpvS8Vuv9Jzbd1?usp=sharing)
+
 ---
 
 ## Milestone 24: Roles & Role Hierarchy
@@ -406,6 +450,8 @@ Managers can see records owned by subordinates, but peer access is restricted. T
 
 Role hierarchies are not just about reporting; they determine data visibility. Proper role design aligns with organizational structure while maintaining control.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1eQYNapnZqQpzPMuONjrRBuj6RwwP_b3o?usp=sharing)
+
 ---
 
 ## Milestone 25: Permission Sets
@@ -417,6 +463,8 @@ A `Permission Set` named **Extra Permission For Travel Agent Manager** was creat
 - Assigned To: Users with Travel Agent Manager Role
 
 Permission Sets add modularity to security management. They allow scalable, targeted permissions without reworking entire profile structures.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/14GOuKJEmdwComRgz8-WYPKX1TuWljEFR?usp=sharing)
 
 ---
 
@@ -435,6 +483,8 @@ This ensures guides see only relevant customer information for trips they’re a
 
 OWDs and Sharing Rules go hand-in-hand to protect sensitive data while enabling collaboration where necessary.
 
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1Cz3MPauqXmXxnSjEonORJbN9_Efs4SOU?usp=sharing)
+
 ---
 
 ## Milestone 27: Test Classes
@@ -449,6 +499,8 @@ Apex Test Class `BookingTriggerTest` was written to validate Booking automation.
 - Used `System.assertEquals()` for validation
 
 Writing test classes forces you to think through all scenarios. It’s also essential for deploying Apex code and maintaining test coverage.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/18PH5ieaMrlftdZe5uFy6UCXCEaf_FaBg?usp=sharing)
 
 ---
 
@@ -472,6 +524,8 @@ A total of **12 test cases** were written and executed across all major modules.
 | 12  | Travel Package Creation     | TravelPackage             | Add new travel package                           | Visible in tab and list view                                       | Passed |
 
 Test case preparation sharpens the focus on both functionality and usability. Defect detection early in the testing phase reduces rework and strengthens system reliability.
+
+[View Test Cases Document](https://docs.google.com/document/d/18IynwR-Kilgg8H-A68Hwhn0dN7LGHtqX1t_LzyCgX98/edit?usp=sharing)
 
 ---
 
@@ -508,6 +562,8 @@ The **Data Import Wizard** was used to import sample data for testing and demons
 - Verified imported records in object tabs
 
 Data import is more than just uploading a file—it requires format validation, field mapping, and post-import verification. Proper execution helps set up realistic datasets for testing and demo purposes.
+
+[View Project Screenshots Folder](https://drive.google.com/drive/folders/1_nf-COTu9gqmJha5c-V0QwHS9cB7n6oo?usp=sharing)
 
 ---
 
