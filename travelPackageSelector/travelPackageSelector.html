@@ -1,0 +1,73 @@
+<template>
+
+    <lightning-card title="Travel Packages">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-combobox 
+
+                name="country"
+
+                label="Select Country"
+
+                value={selectedCountry}
+
+                placeholder="Choose a country"
+
+                options={countryOptions}
+
+                onchange={handleCountryChange}>
+
+            </lightning-combobox>
+
+
+
+
+            <template if:true={packages}>
+
+                <template for:each={packages} for:item="pkg">
+
+                    <div key={pkg.Id} class="slds-box slds-m-top_small">
+
+                        <p><b>Package Type Name:</b> {pkg.Name}</p>
+
+                        <p><b> Package Type:</b> {pkg.Package_Type__c}</p>
+
+                        <p><b>Duration in Days:</b> {pkg.Duration_in_Days__c}</p>
+
+                        <p><b>Guide Facility:</b> {pkg.Guide_Included__c}</p>
+
+                        <p><b>Places Covered:</b> {pkg.Places_Covered__c}</p>
+
+                        <p><b>Membership:</b> {pkg.Membership__c}</p>
+
+                        <p><b>Region:</b> {pkg.Region__c}</p>
+
+                        <p><b>Transportation mode:</b> 
+
+                                       {pkg.Transportation_Modes__c}</p>
+
+                        <p><b>Availability Status:</b> {pkg.Availability_Status__c}</p>
+
+                        <p><b>Average Rating:</b> {pkg.Average_Rating__c}</p>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+
+
+
+            <template if:true={error}>
+
+                <p class="slds-text-color_error">{error}</p>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
