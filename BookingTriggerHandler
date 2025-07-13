@@ -1,0 +1,63 @@
+public class BookingTriggerHandler {
+
+    //Booking Payment Record Creation
+
+    public static void createPaymentRecords(List<Booking__c> newBookings) {
+System.debug('Payment Booking Object: ' + newBookings);
+        List<Booking_Payment__c> paymentsToInsert = new List<Booking_Payment__c>();
+
+        for (Booking__c booking : newBookings) {
+
+            Booking_Payment__c payment = new Booking_Payment__c();
+
+            payment.Booking__c = booking.Id;
+
+            payment.Payment_Status__c = 'Pending'; // Default status
+
+            paymentsToInsert.add(payment);
+
+        }
+
+        if (!paymentsToInsert.isEmpty()) {
+
+            insert paymentsToInsert;
+
+        }
+
+    }
+
+   
+
+    //BookingGuests records Creation
+
+    public static void createBookingGuests(List<Booking__c> bookings) {
+System.debug('BookingGuests Booking Object: ' + bookings);
+        List<BookingGuest__c> guestsToInsert = new List<BookingGuest__c>();
+
+        for (Booking__c booking : bookings) {
+
+            Integer count = (Integer)booking.Number_of_Travelers__c;
+
+            for (Integer i = 1; i <= count; i++) {
+
+                BookingGuest__c guest = new BookingGuest__c();
+
+                guest.Booking__c = booking.Id;
+
+                guest.Name = 'Guest ' + i; // Optional
+
+                guestsToInsert.add(guest);
+
+            }
+
+        }
+
+        if (!guestsToInsert.isEmpty()) {
+
+            insert guestsToInsert;
+
+        }
+
+    }
+
+}
